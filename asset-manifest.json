@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/alimpiieva-goit-react-hw-02-feedback/static/css/main.7acaea2f.css",
-    "main.js": "/alimpiieva-goit-react-hw-02-feedback/static/js/main.91f4ae6c.js",
+    "main.js": "/alimpiieva-goit-react-hw-02-feedback/static/js/main.cc0f0a36.js",
     "index.html": "/alimpiieva-goit-react-hw-02-feedback/index.html",
     "main.7acaea2f.css.map": "/alimpiieva-goit-react-hw-02-feedback/static/css/main.7acaea2f.css.map",
-    "main.91f4ae6c.js.map": "/alimpiieva-goit-react-hw-02-feedback/static/js/main.91f4ae6c.js.map"
+    "main.cc0f0a36.js.map": "/alimpiieva-goit-react-hw-02-feedback/static/js/main.cc0f0a36.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.91f4ae6c.js"
+    "static/js/main.cc0f0a36.js"
   ]
 }
