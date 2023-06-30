@@ -1,17 +1,22 @@
 import React from "react";
+import {
+    FeedbackButton,
+    ButtonContainer,
+} from "./FeedbackOptions.styled";
+
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
-        <div>
+        <ButtonContainer>
             {options.map(option => (
-                <button key={option}
+                <FeedbackButton key={option}
                 onClick={() => onLeaveFeedback(option)}
                 >
                     {option.charAt(0).toUpperCase() + option.slice(1)}
-                </button>
+                </FeedbackButton>
             ))}
             
-        </div>
+        </ButtonContainer>
     );
 };
 

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Section from "./Section/Section";
-import Statistics from "./Statistics/Statistics";
-import FeedbackOptions from "./FeedbackOptions/FeedbackOptions";
+import Section from "../Section/Section";
+import Statistics from "../Statistics/Statistics";
+import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
+import { Container } from "./App.styled.jsx";
 
 export const App = () => {
   const [feedback, setFeedback] = useState({
@@ -24,7 +25,7 @@ export const App = () => {
   const options = ["good", "neutral", "bad"];
 
   return (
-    <div>
+    <Container>
       <Section title="Please leave your Feedback">
         <FeedbackOptions options={options} onLeaveFeedback={handleFeedback} />
       </Section>
@@ -38,7 +39,7 @@ export const App = () => {
           positivePercentage={positivePercentage}
         />
       </Section>
-    </div>
+    </Container>
   );
 };
 
