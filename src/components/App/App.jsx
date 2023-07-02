@@ -1,46 +1,55 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import Section from "../Section/Section";
 import Statistics from "../Statistics/Statistics";
 import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
 import { Container } from "./App.styled.jsx";
 
-export const App = () => {
-  const [feedback, setFeedback] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0
-  });
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      feedback: {
+        good: 0,
+        neutral: 0,
+        bad: 0
+      }
+    };
+  }
 
-  const handleFeedback = option => {
-    setFeedback(prevState => ({
-      ...prevState,
-      [option]: prevState[option] + 1
+  handleFeedback = option => {
+    this.setState(prevState => ({
+      feedback: {
+        ...prevState.feedback,
+        [option]: prevState.feedback[option] + 1
+      }
     }));
   };
 
-  const { good, neutral, bad } = feedback;
-  const total = good + neutral + bad;
-  const positivePercentage = total > 0 ? Math.round((good / total) * 100) : 0;
+  render() {
+    const { good, neutral, bad } = this.state.feedback;
+    const total = good + neutral + bad;
+    const positivePercentage = total > 0 ? Math.round((good / total) * 100) : 0;
 
-  const options = ["good", "neutral", "bad"];
+    const options = ["good", "neutral", "bad"];
 
-  return (
-    <Container>
-      <Section title="Please leave your Feedback">
-        <FeedbackOptions options={options} onLeaveFeedback={handleFeedback} />
-      </Section>
+    return (
+      <Container>
+        <Section title="Please leave your Feedback">
+          <FeedbackOptions options={options} onLeaveFeedback={this.handleFeedback} />
+        </Section>
 
-      <Section title="Statistics">
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={positivePercentage}
-        />
-      </Section>
-    </Container>
-  );
-};
+        <Section title="Statistics">
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={positivePercentage}
+          />
+        </Section>
+      </Container>
+    );
+  }
+}
 
 export default App;
